@@ -1,5 +1,5 @@
 function turnOffLights() {
-    // change background color of all likes to white
+    // change background color of all likes to black
 }
 // turn on stop function 
 function turnOnStopLight() {
