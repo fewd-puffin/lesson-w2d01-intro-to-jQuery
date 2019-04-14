@@ -1,23 +1,23 @@
-function turnOffLights() {
-    // change background color of all likes to white
-}
-// turn on stop function 
-function turnOnStopLight() {
-    // change background color of stop light to red
-}
+document.getElementById('stopButton').onclick = illuminateRed;
+document.getElementById('slowButton').onclick = illuminateYellow;
+document.getElementById('goButton').onclick = illuminateGreen;
 
-// turn on slow function
-function turnOnSlowLight() { 
-// change background color of slow light to yellow
+function illuminateRed() {
+  clearLights();
+  document.getElementById('stopLight').style.backgroundColor = "red";
 }
 
-// turn on go function
-function turnOnGoLight() {
-    // change background color of go light to green
+function illuminateYellow() {
+  clearLights();
+  document.getElementById('slowLight').style.backgroundColor = "yellow";
 }
 
-// set stop light click event
-
-// set slow light click event
-
-// set go light click event
+function illuminateGreen() {
+  clearLights();
+  document.getElementById('goLight').style.backgroundColor = "green";
+}
+function clearLights() {
+  document.getElementById('stopLight').style.backgroundColor = "black";
+  document.getElementById('slowLight').style.backgroundColor = "black";
+  document.getElementById('goLight').style.backgroundColor = "black";
+}
