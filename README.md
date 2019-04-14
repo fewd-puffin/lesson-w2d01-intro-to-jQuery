@@ -275,7 +275,7 @@ var $helloWorld = $('<h2/>').addClass('hello').text('Hello World')
 
 3.
 ```js
-var $container.append($helloWorld)
+$container.append($helloWorld)
 ```
 
 If you prefer to, you can also chain all of these commands together, but I find that separating it into these three steps helps keeps things organized and prevents your head from spinning.
