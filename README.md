@@ -15,6 +15,11 @@
 
 <img width="1000" alt="jquery-dom" src="https://user-images.githubusercontent.com/5384023/51519572-6a2c5880-1e32-11e9-99a0-000e18b63417.png">
 
+jQuery is a javascript *Library*
+
+A library is a large collection of code that gives us functionality that we don't have to write ourselves!  Let's go to the jQuery website and look at the source code.
+
+It's just javascript!
 
 ## Including jQuery
 
@@ -184,6 +189,9 @@ Read more about [jQuery DOM manipulation methods](https://learn.jquery.com/using
 
 [jQuery Cheat Sheet](https://oscarotero.com/jquery/) provides us with a list of manipulation methods we can use.  
 
+
+
+Another 
 Discuss the difference between
 - [.text()](http://api.jquery.com/text/)
 - [.html()](http://api.jquery.com/html/)
@@ -226,13 +234,52 @@ Discuss the difference between
 - [.toggleClass()](http://api.jquery.com/toggleClass/)
 - [.hasClass()](http://api.jquery.com/hasClass/)
 
-### Lab: Manipulate the DOM
+### Creating Elements in jQuery
+To create a brand new element in jQuery you use this sytax:
 
-Open [exercise/jquery-manipulate/index.html](exercise/jquery-manipulate/index.html) in your browser. 
+```js
+$('<h2></h2>')
+```
 
-Open [exercise/jquery-manipulate](exercise/jquery-manipulate/) folder in your text editor.
+or this syntax:
 
-Complete the exercises in [exercise/jquery-manipulate/main.js](exercise/jquery-selectors/main.js).  You will see the results in the browser.
+```js
+$('<h2/>')
+```
+
+Kind of like a closing tag, but notice that the `/` is at the end!  You can use either, but I prefer the second one since it is shorter.
+
+After creating an element you can assign it to a variable and chain other jQuery methods to it to customize it.  Like this.
+
+```js
+var $helloWorld = $('<h2/>').addClass('hello').text('Hello World')
+```
+
+But this isn't very useful on it's own.  This just creates the element in memory?  How do we append it to something that already exists on the dom?
+
+1. First we select the parent element we want to append to.
+2. Then we create the element and set it's attributes.
+3. Then we append the element to the selected parent.
+
+like this:
+
+1.
+```js
+var $container = $('.container')
+```
+
+2.
+```js
+var $helloWorld = $('<h2/>').addClass('hello').text('Hello World')
+```
+
+3.
+```js
+var $container.append($helloWorld)
+```
+
+If you prefer to, you can also chain all of these commands together, but I find that separating it into these three steps helps keeps things organized and prevents your head from spinning.
+
 
 ### Effects / Animations
 
@@ -271,6 +318,9 @@ Complete the exercises in [exercise/jquery-manipulate/main.js](exercise/jquery-s
 ![images/jquery-events-7.png](images/jquery-events-7.png)
 
 ![images/jquery-events-8.png](images/jquery-events-8.png)
+
+
+Let's do some exercises!  Let's start with the `theme-switcher` exercise.
 
 ## Additional Resources
 
